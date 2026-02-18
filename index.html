@@ -6,6 +6,34 @@
     <title>Tarea: Diseño de Red de Aire Comprimido</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        
+        /* Estilos del Menú / Índice */
+        .navbar {
+            background-color: #004b87;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+        .navbar a:hover {
+            background-color: #002d52;
+        }
+        .navbar a.active {
+            background-color: #e67e22;
+        }
+
         .tarea-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #d1d9e0; }
         .header-tarea { text-align: center; border-bottom: 4px solid #004b87; margin-bottom: 30px; padding-bottom: 10px; }
         .instrucciones { background: #eef7ff; padding: 20px; border-left: 5px solid #004b87; margin-bottom: 30px; }
@@ -15,10 +43,23 @@
         .pregunta { margin: 20px 0; padding: 15px; background: #fff; border: 1px solid #ddd; border-radius: 5px; }
         .input-box { border-bottom: 2px solid #333; display: inline-block; width: 200px; margin: 0 10px; height: 25px; vertical-align: bottom; }
         .tablas-placeholder { background: #fff3cd; border: 2px dashed #ffeeba; padding: 40px; text-align: center; color: #856404; margin-top: 20px; border-radius: 8px; }
-        @media print { .no-print { display: none; } body { background: white; } .tarea-container { box-shadow: none; border: none; } }
+        
+        @media print { 
+            .no-print, .navbar { display: none !important; } 
+            body { background: white; padding: 0; } 
+            .tarea-container { box-shadow: none; border: none; } 
+        }
     </style>
 </head>
 <body>
+
+<nav class="navbar no-print">
+    <a href="a1.html">Cálculo Caudal</a>
+    <a href="a2.html">Diámetro Tubo</a>
+    <a href="a3.html">Volumen Acumulador</a>
+    <a href="a4.html">Longitud Accesorios</a>
+    <a href="a5.html" class="active">Ejercicio Completo</a>
+</nav>
 
 <div class="tarea-container">
     <div class="header-tarea">
@@ -32,7 +73,7 @@
 
     <section class="seccion-problema">
         <h2>1. Escenario del Proyecto</h2>
-        <p>Usted ha sido contratado para diseñar la red principal de una nueva planta. Se requiere alimentar dos grupos de actuadores con las siguientes características:</p>
+        <p>Usted está encargado de diseñar la red principal de una nueva planta. Se requiere alimentar dos grupos de actuadores con las siguientes características:</p>
         
         <div class="datos-tecnicos">
             <div>

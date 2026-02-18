@@ -4,115 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cálculo de Caudal - Neumática</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f0f4f8;
         }
         .container {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h1 {
             color: #004b87;
-            border-bottom: 2px solid #004b87;
+            border-bottom: 3px solid #004b87;
             padding-bottom: 10px;
+            text-align: center;
         }
         h2 {
             color: #2c3e50;
-            font-size: 1.2em;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #e67e22;
+            padding-left: 10px;
         }
         .datos {
             background-color: #eef7ff;
-            padding: 15px;
-            border-left: 5px solid #004b87;
+            padding: 20px;
+            border-radius: 8px;
             margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
         .formula-box {
-            background-color: #f4f4f4;
-            padding: 15px;
-            margin: 10px 0;
-            font-family: "Courier New", Courier, monospace;
-            border-radius: 4px;
-            overflow-x: auto;
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
         }
         .nota {
             background-color: #fff3cd;
             border: 1px solid #ffeeba;
             padding: 15px;
             margin-top: 30px;
-            font-style: italic;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #d35400;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Ejemplo cálculo de caudal de una red</h1>
+    <h1>Ejemplo: Cálculo de Caudal de una Red</h1>
     
-    <p>Para aclarar la parte teórica se empleará el siguiente ejemplo.</p>
+    <p>Para dimensionar correctamente una instalación neumática, es fundamental calcular el consumo de aire comprimido de los actuadores.</p>
     
-    <p>Se tiene un cilindro de doble efecto con un diámetro de émbolo de <strong>50 mm</strong>, vástago de <strong>20 mm</strong>, con una presión total de <strong>7 bares</strong>. Este cilindro tiene una carrera de <strong>250mm</strong> y funciona a <strong>40 ciclos por minuto</strong>. ¿Cuál es el caudal total?</p>
+    <p><strong>Problema:</strong> Se tiene un cilindro de doble efecto con las siguientes características:</p>
 
     <div class="datos">
-        <strong>Como primer paso identificamos los datos:</strong><br>
-        DE = 50 mm<br>
-        DV = 20 mm<br>
-        PT = 7 bar<br>
-        Ciclos/min = 40<br>
-        C = 250 mm
+        <div>
+            <strong>Geometría:</strong><br>
+            Diámetro émbolo ($D_E$): 50 mm<br>
+            Diámetro vástago ($D_V$): 20 mm<br>
+            Carrera ($C$): 250 mm
+        </div>
+        <div>
+            <strong>Operación:</strong><br>
+            Presión de trabajo ($P$): 7 bar<br>
+            Régimen: 40 ciclos/min
+        </div>
     </div>
 
-    <h2>Cálculo de QA (Avance)</h2>
-    <p>Sustituimos los datos en la fórmula:</p>
+    
+
+    <h2>1. Cálculo de Consumo en el Avance ($Q_A$)</h2>
+    <p>Utilizamos la fórmula de volumen para un cilindro multiplicado por la relación de compresión:</p>
     <div class="formula-box">
-        QA = (π/4) * (50 mm)² * (250 mm) * [(7 bar + 1 bar atm) / 1 bar]<br>
-        QA = (π/4) * (625000 mm³) * (8)<br>
-        QA = (π/4) * (5000000 mm³)<br>
-        QA = 3926990.817 mm³
+        \[ Q_A = \frac{\pi}{4} \cdot D_E^2 \cdot C \cdot \frac{P + P_{atm}}{P_{atm}} \]
+        \[ Q_A = \frac{\pi}{4} \cdot (50 \, mm)^2 \cdot 250 \, mm \cdot \left( \frac{7 + 1}{1} \right) \]
+        \[ Q_A = 0.7854 \cdot 2500 \cdot 250 \cdot 8 = 3,926,990.8 \, mm^3 \]
     </div>
+    <p>Convertimos a decímetros cúbicos ($dm^3$ o Litros):</p>
+    <p>$$ Q_A = 3.927 \, Litros / ciclo $$</p>
 
-    <p>Conversión a decímetros cúbicos (1 mm³ = 1x10⁻⁶ dm³):</p>
-    <p>QA = (3926990.817) * (1x10⁻⁶) = <span class="highlight">3.9269908 dm³</span></p>
-
-    <h2>Cálculo de QR (Retorno)</h2>
-    <p>Sustituimos los datos en la fórmula:</p>
+    <h2>2. Cálculo de Consumo en el Retorno ($Q_R$)</h2>
+    <p>En el retorno, restamos el área del vástago porque ese espacio no consume aire:</p>
     <div class="formula-box">
-        QR = (π/4) * (50 mm² – 20 mm²) * (250 mm) * [(7 bar + 1 bar) / 1 bar]<br>
-        QR = (π/4) * (525000 mm³) * (8)<br>
-        QR = (π/4) * (4200000 mm³)<br>
-        QR = 3298672.286 mm³
+        \[ Q_R = \frac{\pi}{4} \cdot (D_E^2 - D_V^2) \cdot C \cdot \frac{P + P_{atm}}{P_{atm}} \]
+        \[ Q_R = \frac{\pi}{4} \cdot (50^2 - 20^2) \cdot 250 \cdot 8 \]
+        \[ Q_R = 0.7854 \cdot (2500 - 400) \cdot 250 \cdot 8 \]
+        \[ Q_R = 3,298,672.3 \, mm^3 \]
     </div>
+    <p>Convertimos a decímetros cúbicos:</p>
+    <p>$$ Q_R = 3.299 \, Litros / ciclo $$</p>
 
-    <p>Conversión a decímetros cúbicos:</p>
-    <p>QR = (3298672.286) * (1x10⁻⁶) = <span class="highlight">3.298672286 dm³</span></p>
-
-    <h2>Caudal Total por Ciclo</h2>
-    <p>Sumamos ambos resultados:</p>
-    <p>3.9269908 dm³ + 3.298672286 dm³ = <strong>7.225663086 dm³</strong></p>
-
-    <h2>Caudal Total por Minuto</h2>
-    <p>Como el cilindro trabaja a <strong>40 ciclos por minuto</strong>, multiplicamos el caudal total por el número de ciclos:</p>
+    <h2>3. Consumo Total ($Q_T$)</h2>
+    <p>Sumamos el avance y el retorno para obtener el consumo por ciclo, y multiplicamos por la frecuencia de trabajo:</p>
     <div class="formula-box">
-        QT = 7.225663086 dm³ * 40 ciclos/min = <span class="highlight">289.0265235 dm³/min</span>
+        \[ Q_{ciclo} = Q_A + Q_R = 3.927 + 3.299 = 7.226 \, L/ciclo \]
+        \[ Q_T = 7.226 \, L/ciclo \cdot 40 \, ciclos/min \]
+        <br>
+        <span class="highlight" style="font-size: 1.3em;">\( Q_T = 289.04 \, L/min \)</span>
     </div>
-
-    <p>Ya que un decímetro cúbico es igual a un litro, el resultado final es:</p>
-    <p><strong>QT = 289.0265235 l/min</strong></p>
 
     <div class="nota">
-        <strong>NOTA:</strong> Esto es para un solo cilindro. Posteriormente, este valor se multiplica por el número de cilindros que tienen esas mismas características. Si hay más cilindros con diferentes características, se sigue el mismo proceso y al final se suman los resultados.
+        <strong>IMPORTANTE:</strong> Este resultado representa el consumo de <strong>un solo cilindro</strong>. Si la red alimenta a varios actuadores, se deben sumar los caudales individuales de todos ellos para obtener el consumo total de la planta.
     </div>
 </div>
 

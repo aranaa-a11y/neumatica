@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Recursos - Imágenes</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
+        .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+        .foto { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .foto img { width: 100%; height: auto; border-radius: 4px; }
+        .nombre { margin-top: 10px; font-size: 0.9em; color: #555; font-weight: bold; }
+        .btn-regresar { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #004b87; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="../a5.html" class="btn-regresar">← Volver a la Tarea</a>
+    <h1>Galería de Imágenes y Tablas</h1>
+    <p>Haz clic derecho en la imagen y selecciona "Guardar imagen como..." para descargar.</p>
+
+    <div class="galeria">
+        <div class="foto">
+            <img src="1.png">
+            <div class="nombre">Nomograma 1</div>
+        </div>
+        <div class="foto">
+            <img src="2.png">
+            <div class="nombre">Nomograma 2</div>
+        </div>
+        </div>
+</body>
+</html>

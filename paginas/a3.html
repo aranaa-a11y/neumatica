@@ -57,6 +57,13 @@
             border: 1px solid #bbdefb;
             margin: 20px 0;
         }
+        /* Estilo para avisar si la imagen no carga */
+        img::after { 
+            content: " Error: No se encontró la imagen en " attr(src);
+            display: block;
+            font-size: 12px;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -71,22 +78,23 @@
     
     <p>Para comenzar ubicamos la diagonal que le corresponde al accesorio en este caso es la que tiene el número 5.</p>
     
-    <p>Ya que el problema nos indica que el diámetro es de 40 mm nos vamos a la parte inferior de la tabla y ubicamos la recta que corresponde con la medida como se muestra a continuación. Posterior a ubicar la recta, se marca para que resalte de las demás y sea sencilla de identificar.</p>
+    <p>Ya que el problema nos indica que el diámetro es de 40 mm nos vamos a la parte inferior de la tabla y ubicamos la recta que corresponde con la medida como se muestra a continuación.</p>
+    
     <div class="img-container">
-        <img src="C/1.png" alt="Ubicación de diámetro 40mm">
+        <img src="./C/1.png" alt="Ubicación de diámetro 40mm">
     </div>
 
     <p>Una vez marcada se debe prolongar hasta que esta intersecte a la diagonal que corresponde al accesorio (en este caso la 5) y con ayuda de un punto lo marcamos.</p>
     <div class="img-container">
-        <img src="C/2.png" alt="Intersección con diagonal 5 - paso A">
+        <img src="./C/2.png" alt="Intersección con diagonal 5 - paso A">
     </div>
     <div class="img-container">
-        <img src="C/3.png" alt="Intersección con diagonal 5 - paso B">
+        <img src="./C/3.png" alt="Intersección con diagonal 5 - paso B">
     </div>
 
-    <p>Ahora con ayuda del punto se debe localizar la línea horizontal que se dirige al lado izquierdo de la tabla que corresponde a la longitud del accesorio, que es el dato que se desea encontrar.</p>
+    <p>Ahora con ayuda del punto se debe localizar la línea horizontal que se dirige al lado izquierdo de la tabla que corresponde a la longitud del accesorio.</p>
     <div class="img-container">
-        <img src="C/4.png" alt="Lectura de longitud equivalente">
+        <img src="./C/4.png" alt="Lectura de longitud equivalente">
     </div>
 
     <div class="resultado-caja">
@@ -98,24 +106,22 @@
     <h2>Ejemplo 2:</h2>
     <p>¿Cuál es la longitud equivalente de una pieza en T de 4 pulgadas de diámetro?</p>
 
-    <p>Para comenzar al igual que en el ejemplo anterior ubicamos la línea a la que corresponde la diagonal del accesorio en este caso es la que tiene el número 3.</p>
-    
-    <p>Ya que el problema indica que el diámetro es de 4 pulgadas nos vamos a la parte superior de la tabla y ubicamos la recta que corresponde con la medida como se muestra a continuación:</p>
+    <p>Ubicamos la línea diagonal número 3 y el diámetro de 4 pulgadas en la parte superior:</p>
     <div class="img-container">
-        <img src="C/5.png" alt="Ubicación de diámetro 4 pulgadas">
+        <img src="./C/5.png" alt="Ubicación de diámetro 4 pulgadas">
     </div>
 
-    <p>Ahora que ubicamos la línea la vamos a prolongar hasta que se intercepte con la línea diagonal a la que corresponde el accesorio (este punto lo marcaremos con un punto azul).</p>
+    <p>Prolongamos hasta la intersección (punto azul):</p>
     <div class="img-container">
-        <img src="C/6.png" alt="Intersección Ejemplo 2 - paso A">
+        <img src="./C/6.png" alt="Intersección Ejemplo 2 - paso A">
     </div>
     <div class="img-container">
-        <img src="C/7.png" alt="Intersección Ejemplo 2 - paso B">
+        <img src="./C/7.png" alt="Intersección Ejemplo 2 - paso B">
     </div>
 
-    <p>Usando el punto como referencia solo debemos seguir la recta horizontal que se dirige al lado izquierdo de la tabla para obtener la longitud del accesorio.</p>
+    <p>Seguimos la horizontal a la izquierda:</p>
     <div class="img-container">
-        <img src="C/8.png" alt="Lectura final Ejemplo 2">
+        <img src="./C/8.png" alt="Lectura final Ejemplo 2">
     </div>
 
     <div class="resultado-caja">

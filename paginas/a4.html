@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Diámetro de la Tubería</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #004b87;
+            border-bottom: 3px solid #004b87;
+            padding-bottom: 10px;
+        }
+        .datos-resaltados {
+            background: #eef7ff;
+            padding: 15px;
+            border-left: 5px solid #004b87;
+            margin: 20px 0;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .contenedor-img {
+            text-align: center;
+            margin: 25px 0 40px 0;
+        }
+        .contenedor-img img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .resultado-final {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Ejemplo: Cálculo del diámetro del tubo</h1>
+    
+    <p>Supongamos que queremos calcular el diámetro de una red de aire comprimido que tendrá una longitud de 200 metros, el caudal de sus cilindros es igual a 500 m3/h, la pérdida de presión admisible de presión que se le da es de 10kPa. Además, la presión de servicio será de 5 bares.</p>
+
+    <p>Para comenzar identificaremos los datos que se nos proporcionan. En este caso tenemos que:</p>
+    
+    <div class="datos-resaltados">
+        Longitud de tubo = 200 m<br>
+        Caudal = 500 m3/h<br>
+        Pérdida de presión = 10 kPa<br>
+        Presión de funcionamiento = 5 bar
+    </div>
+
+    <p>Ahora colocaremos una marca para identificar los datos en el nomograma como se muestran a continuación:</p>
+    <div class="contenedor-img">
+        <img src="dia/1.png" alt="Paso 1: Identificación de datos en el nomograma">
+    </div>
+
+    <p>Ya que ubicamos los datos lo que haremos a continuación es trazar una línea que una los datos de la longitud del tubo y el caudal; esta debe prolongarse hasta la línea vertical con el nombre de Eje 1.</p>
+    <div class="contenedor-img">
+        <img src="dia/2.png" alt="Paso 2: Trazo hacia el Eje 1">
+    </div>
+
+    <p>Ahora debemos trazar otra diagonal que una la marca de la presión de funcionamiento con la marca del dato de la pérdida de presión. Esta debe pasar por el Eje 2 como se muestra a continuación.</p>
+    <div class="contenedor-img">
+        <img src="dia/3.png" alt="Paso 3: Trazo hacia el Eje 2">
+    </div>
+
+    <p>Como último paso vamos a unir con otra recta el punto en el que la diagonal amarilla intercepta el Eje 1 con el punto de la diagonal naranja que intercepta el Eje 2. Esta línea debe pasar por la recta del Diámetro para obtener el valor que queremos.</p>
+    <div class="contenedor-img">
+        <img src="dia/4.png" alt="Paso 4: Cruce por la escala de diámetro">
+    </div>
+
+    <p>Así podemos ver que el punto que intercepta el eje del diámetro del tubo pasa un poco por debajo de la línea de los 70 mm.</p>
+    <div class="contenedor-img">
+        <img src="dia/5.png" alt="Paso 5: Lectura final del diámetro">
+    </div>
+
+    <div class="resultado-final">
+        Entonces podemos notar que el resultado aproximado del diámetro para esta tubería es de 69 mm.
+    </div>
+</div>
+
+</body>
+</html>

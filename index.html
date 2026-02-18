@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Neumática e Hidráulica</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f7f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background: #004b87;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.2em; }
+        .subtitle { opacity: 0.9; font-size: 1.1em; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 6px solid #004b87;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #004b87;
+            font-size: 1.25em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #666;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-view {
+            background: #004b87;
+            color: white;
+        }
+
+        .btn-view:hover {
+            background: #003361;
+        }
+
+        .card-tarea {
+            border-top-color: #e67e22;
+            background-color: #fffaf5;
+        }
+
+        .btn-tarea {
+            background: #e67e22;
+            color: white;
+        }
+
+        .btn-tarea:hover {
+            background: #d35400;
+        }
+
+        /* Sección de Descargas */
+        .download-section {
+            margin-top: 40px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px dashed #004b87;
+            text-align: center;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-top: 10px;
+        }
+
+        .btn-download:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Laboratorio Virtual de Neumática</h1>
+    <p class="subtitle">Material didáctico y ejercicios prácticos de diseño de redes</p>
+</header>
+
+<div class="grid-container">
+    
+    <div class="card">
+        <h2>1. Cálculo de Caudal</h2>
+        <p>Ejemplo detallado sobre cómo determinar el consumo de aire según los ciclos y dimensiones de los cilindros.</p>
+        <a href="paginas/a1.html" class="btn btn-view">Estudiar Ejemplo</a>
+    </div>
+
+    <div class="card">
+        <h2>2. Volumen del Acumulador</h2>
+        <p>Guía paso a paso para dimensionar el depósito de almacenamiento mediante tablas técnicas.</p>
+        <a href="paginas/a2.html" class="btn btn-view">Estudiar Ejemplo</a>
+    </div>
+
+    <div class="card">
+        <h2>3. Longitud Equivalente</h2>
+        <p>Cálculo de pérdidas por accesorios (codos, válvulas, T) para ajustar la longitud total de la tubería.</p>
+        <a href="paginas/a3.html" class="btn btn-view">Estudiar Ejemplo</a>
+    </div>
+
+    <div class="card">
+        <h2>4. Diámetro del Tubo</h2>
+        <p>Uso del nomograma para encontrar el diámetro óptimo de la red principal.</p>
+        <a href="paginas/a4.html" class="btn btn-view">Estudiar Ejemplo</a>
+    </div>
+
+    <div class="card card-tarea">
+        <h2>5. Tarea: Ejercicio Integral</h2>
+        <p>Integración de todos los pasos para el diseño de una red real. <strong>Hoja de trabajo sin soluciones.</strong></p>
+        <a href="paginas/a5.html" class="btn btn-tarea">Ir a la Tarea</a>
+    </div>
+
+</div>
+
+<div class="download-section">
+    <h3>📂 Material de Apoyo y Tablas</h3>
+    <p>¿Necesitas las imágenes o tablas para tus apuntes? Accede a la carpeta de recursos para ver o descargar el material.</p>
+    <a href="paginas/imagenes/" target="_blank" class="btn-download">
+        📂 Abrir Carpeta de Imágenes
+    </a>
+</div>
+
+</body>
+</html>

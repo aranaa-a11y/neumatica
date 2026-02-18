@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea: Diseño de Red de Aire Comprimido</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .tarea-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #d1d9e0; }
+        .header-tarea { text-align: center; border-bottom: 4px solid #004b87; margin-bottom: 30px; padding-bottom: 10px; }
+        .instrucciones { background: #eef7ff; padding: 20px; border-left: 5px solid #004b87; margin-bottom: 30px; }
+        .seccion-problema { margin-bottom: 40px; }
+        h2 { color: #004b87; font-size: 1.5em; border-bottom: 1px solid #eee; }
+        .datos-tecnicos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px dashed #ccc; }
+        .pregunta { margin: 20px 0; padding: 15px; background: #fff; border: 1px solid #ddd; border-radius: 5px; }
+        .input-box { border-bottom: 2px solid #333; display: inline-block; width: 200px; margin: 0 10px; height: 25px; vertical-align: bottom; }
+        .tablas-placeholder { background: #fff3cd; border: 2px dashed #ffeeba; padding: 40px; text-align: center; color: #856404; margin-top: 20px; border-radius: 8px; }
+        @media print { .no-print { display: none; } body { background: white; } .tarea-container { box-shadow: none; border: none; } }
+    </style>
+</head>
+<body>
+
+<div class="tarea-container">
+    <div class="header-tarea">
+        <h1>Hoja de Trabajo: Diseño Integral de Red Neumática</h1>
+        <p><strong>Asignatura:</strong> Neumática e Hidráulica | <strong>Alumno:</strong> ________________________________</p>
+    </div>
+
+    <div class="instrucciones">
+        <strong>Instrucciones:</strong> Utilizando los conocimientos adquiridos sobre cálculo de caudal, nomogramas de diámetro, longitudes equivalentes y selección de acumuladores, resuelva el siguiente caso práctico de diseño industrial. Muestre sus operaciones al reverso si es necesario.
+    </div>
+
+    <section class="seccion-problema">
+        <h2>1. Escenario del Proyecto</h2>
+        <p>Usted ha sido contratado para diseñar la red principal de una nueva planta. Se requiere alimentar dos grupos de actuadores con las siguientes características:</p>
+        
+        <div class="datos-tecnicos">
+            <div>
+                <strong>Grupo A (2 Cilindros):</strong>
+                <ul>
+                    <li>Diámetro émbolo: 50 mm</li>
+                    <li>Diámetro vástago: 18 mm</li>
+                    <li>Carrera: 250 mm</li>
+                    <li>Régimen: 20 ciclos/min</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Grupo B (3 Cilindros):</strong>
+                <ul>
+                    <li>Diámetro émbolo: 70 mm</li>
+                    <li>Diámetro vástago: 35 mm</li>
+                    <li>Carrera: 310 mm</li>
+                    <li>Régimen: 40 ciclos/min</li>
+                </ul>
+            </div>
+        </div>
+        <p><em>*Nota: Considere un crecimiento proyectado del consumo al triple (3x) para el diseño de la tubería.</em></p>
+    </section>
+
+    <section class="seccion-problema">
+        <h2>2. Especificaciones de Instalación</h2>
+        <ul>
+            <li>Longitud rectilínea de la red: <strong>500 metros</strong>.</li>
+            <li>Accesorios previstos: <strong>2 piezas en T</strong>, <strong>5 codos normales</strong> y <strong>9 válvulas de cierre</strong>.</li>
+            <li>Presión de servicio: <strong>5 bar</strong>.</li>
+            <li>Pérdida de presión admisible (Δp): <strong>10 kPa</strong>.</li>
+        </ul>
+    </section>
+
+    <section class="seccion-problema">
+        <h2>3. Requerimientos a Calcular</h2>
+        
+        <div class="pregunta">
+            <strong>A) Análisis de Caudal:</strong> Calcule el consumo total actual de la red en Litros por minuto (L/min) y conviértalo a m³/h para su uso en nomogramas.
+            <br><br>
+            Resultado QT: <div class="input-box"></div> L/min | <div class="input-box"></div> m³/h
+        </div>
+
+        <div class="pregunta">
+            <strong>B) Dimensionamiento de Tubería:</strong> 
+            1. Determine el Diámetro Preliminar (nomograma): <div class="input-box"></div> mm.
+            <br>
+            2. Calcule la Longitud Equivalente Total (Red + Accesorios): <div class="input-box"></div> m.
+            <br>
+            3. Diámetro Final de la tubería principal: <div class="input-box"></div> mm.
+        </div>
+
+        <div class="pregunta">
+            <strong>C) Almacenamiento:</strong> Calcule el volumen necesario del acumulador considerando el caudal del inciso A, un Δp de 0.25 bar y un factor de servicio Z=20.
+            <br><br>
+            Capacidad del acumulador: <div class="input-box"></div> m³
+        </div>
+    </section>
+
+    <section class="no-print">
+        <h2>4. Material de Apoyo</h2>
+        <p>Utilice las tablas y nomogramas de sus prácticas anteriores para obtener los valores de intersección.</p>
+        <div class="tablas-placeholder">
+            [ Aquí el alumno debe consultar el Nomograma de Diámetros y la Tabla de Longitudes Equivalentes ]
+        </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 50px;" class="no-print">
+        <button onclick="window.print()" style="padding: 10px 20px; cursor: pointer; background: #004b87; color: white; border: none; border-radius: 5px;">Imprimir Hoja de Tarea</button>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea: Ejercicio Integral de Neumática II</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        .alumno-data {
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        h1 { font-size: 1.8em; margin-bottom: 5px; }
+        h2 { 
+            font-size: 1.3em; 
+            background: #eee; 
+            padding: 5px 10px; 
+            border-left: 5px solid #333;
+            margin-top: 30px;
+        }
+        .instrucciones {
+            font-style: italic;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .problema-texto {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .espacio-respuesta {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #000;
+            min-height: 80px;
+        }
+        .no-print {
+            margin-top: 30px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html">🏠 Volver al Menú Principal</a>
+
+<div class="header">
+    <h1>EJERCICIO INTEGRAL: DISEÑO DE RED DE AIRE COMPRIMIDO II</h1>
+    <p>Tecnólogo en Control Automático e Instrumentación</p>
+</div>
+
+<div class="alumno-data">
+    NOMBRE DEL ALUMNO: _________________________________________________ FECHA: ___________
+</div>
+
+<div class="instrucciones">
+    <strong>Instrucciones:</strong> Analice cuidadosamente el escenario planteado y realice los cálculos utilizando los procedimientos vistos en clase. Justifique cada resultado.
+</div>
+
+<div class="problema-texto">
+    Usted debe rediseñar la red de aire comprimido de una planta de ensamble automatizado. 
+    El sistema cuenta con los siguientes actuadores neumáticos:
+    <ul>
+        <li><strong>Grupo 1:</strong> Tres cilindros de doble efecto con:
+            Diámetro de émbolo: 63 mm,
+            diámetro de vástago: 20 mm,
+            carrera: 300 mm,
+            frecuencia: 25 ciclos/min.</li>
+
+        <li><strong>Grupo 2:</strong> Cuatro cilindros de doble efecto con:
+            Diámetro de émbolo: 80 mm,
+            diámetro de vástago: 30 mm,
+            carrera: 400 mm,
+            frecuencia: 35 ciclos/min.</li>
+    </ul>
+
+    Se proyecta que la demanda aumentará al doble en cinco años.
+    La longitud total de la red principal será de 650 metros.
+</div>
+
+<div class="problema-texto">
+    <strong>Accesorios instalados:</strong>
+    <ul>
+        <li>3 piezas en T</li>
+        <li>8 codos de 90°</li>
+        <li>6 válvulas de cierre</li>
+        <li>2 filtros reguladores</li>
+    </ul>
+</div>
+
+<div class="problema-texto">
+    <strong>Condiciones de operación:</strong>
+    <ul>
+        <li>Pérdida máxima permisible (∆p): 12 kPa</li>
+        <li>Presión de servicio: 6 bar</li>
+        <li>Para el acumulador: ∆p = 0.3 bar</li>
+        <li>Factor de servicio Z = 25</li>
+    </ul>
+</div>
+
+<h2>INCISO A: Consumo Total de Aire</h2>
+<p>Determine el consumo total actual en L/min y conviértalo a m³/h. Posteriormente calcule el consumo proyectado considerando el crecimiento futuro.</p>
+
+<div class="espacio-respuesta">
+    QT actual: __________________ L/min <br><br>
+    QT actual: __________________ m³/h <br><br>
+    QT proyectado: __________________ L/min
+</div>
+
+<h2>INCISO B: Dimensionamiento de la Tubería</h2>
+<p>Calcule el diámetro preliminar utilizando el caudal proyectado. 
+Determine la longitud equivalente considerando accesorios y obtenga el diámetro final comercial recomendado.</p>
+
+<div class="espacio-respuesta">
+    Diámetro preliminar: __________________ mm <br><br>
+    Longitud equivalente total: __________________ m <br><br>
+    Diámetro final seleccionado: __________________ mm
+</div>
+
+<h2>INCISO C: Cálculo del Acumulador</h2>
+<p>Determine el volumen mínimo del acumulador utilizando el caudal proyectado y las condiciones indicadas.</p>
+
+<div class="espacio-respuesta">
+    Volumen del acumulador: __________________ m³
+</div>
+
+<div class="no-print">
+    <hr>
+    <p><em>Presione el botón para generar la versión imprimible:</em></p>
+    <button onclick="window.print()">Imprimir Hoja de Tarea</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen Neumática - Red de Aire Comprimido</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+max-width:900px;
+margin:auto;
+padding:20px;
+line-height:1.6;
+}
+
+.header{
+text-align:center;
+border-bottom:3px solid black;
+padding-bottom:10px;
+margin-bottom:25px;
+}
+
+.alumno{
+margin-bottom:25px;
+font-weight:bold;
+}
+
+.instrucciones{
+border:1px solid #aaa;
+padding:15px;
+margin-bottom:25px;
+font-style:italic;
+}
+
+h2{
+background:#f0f0f0;
+padding:6px;
+border-left:6px solid black;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin:20px 0;
+}
+
+th,td{
+border:1px solid black;
+padding:8px;
+text-align:center;
+}
+
+.respuesta{
+border:1px solid black;
+height:90px;
+margin:15px 0;
+padding:10px;
+}
+
+.no-print{
+text-align:center;
+margin-top:30px;
+}
+
+button{
+padding:10px 20px;
+background:#333;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+@media print{
+.no-print{display:none;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>EXAMEN PARCIAL</h1>
+<h2>DISEÑO DE RED DE AIRE COMPRIMIDO</h2>
+<p>Tecnólogo en Control Automático e Instrumentación</p>
+<p><b>Duración:</b> 90 minutos</p>
+</div>
+
+<div class="alumno">
+NOMBRE: ___________________________________________<br><br>
+REGISTRO: _____________________<br><br>
+FECHA: _____________________
+</div>
+
+<div class="instrucciones">
+Utilice el <b>último dígito de su número de registro</b> para determinar los valores del problema.
+Todos los cálculos deben incluir procedimiento.
+</div>
+
+<h2>Determinación de parámetros</h2>
+
+<table>
+<tr>
+<th>Último dígito del registro</th>
+<th>Frecuencia Grupo 1</th>
+<th>Frecuencia Grupo 2</th>
+<th>Longitud de red</th>
+</tr>
+
+<tr>
+<td>0,2,4,6,8</td>
+<td>25 ciclos/min</td>
+<td>35 ciclos/min</td>
+<td>650 m</td>
+</tr>
+
+<tr>
+<td>1,3,5,7,9</td>
+<td>30 ciclos/min</td>
+<td>40 ciclos/min</td>
+<td>720 m</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Último dígito del registro</th>
+<th>Carrera de cilindros</th>
+</tr>
+
+<tr>
+<td>0,1,2,3,4</td>
+<td>300 mm</td>
+</tr>
+
+<tr>
+<td>5,6,7,8,9</td>
+<td>350 mm</td>
+</tr>
+
+</table>
+
+<h2>Escenario del problema</h2>
+
+<p>
+Una planta de ensamble automatizado requiere rediseñar su sistema de aire comprimido.
+</p>
+
+<ul>
+
+<li><b>Grupo 1:</b><br>
+3 cilindros de doble efecto<br>
+Diámetro de émbolo = 63 mm<br>
+Diámetro de vástago = 20 mm<br>
+Carrera = según tabla<br>
+Frecuencia = según tabla
+</li>
+
+<br>
+
+<li><b>Grupo 2:</b><br>
+4 cilindros de doble efecto<br>
+Diámetro de émbolo = 80 mm<br>
+Diámetro de vástago = 30 mm<br>
+Carrera = según tabla<br>
+Frecuencia = según tabla
+</li>
+
+</ul>
+
+<p>
+Se proyecta que la demanda aumentará al doble en cinco años.
+</p>
+
+<p><b>Accesorios instalados:</b></p>
+
+<ul>
+<li>3 piezas en T</li>
+<li>8 codos de 90°</li>
+<li>6 válvulas de cierre</li>
+<li>2 filtros reguladores</li>
+</ul>
+
+<p><b>Condiciones de operación:</b></p>
+
+<ul>
+<li>Presión de servicio: 6 bar</li>
+<li>Pérdida máxima permisible Δp = 12 kPa</li>
+<li>Para acumulador Δp = 0.3 bar</li>
+<li>Factor de servicio Z = 25</li>
+</ul>
+
+<h2>INCISO A – Consumo Total de Aire</h2>
+
+<p>
+Calcule el consumo total de aire del sistema en:
+</p>
+
+<ul>
+<li>L/min</li>
+<li>m³/h</li>
+<li>Consumo proyectado</li>
+</ul>
+
+<div class="respuesta">
+QT actual: __________________________ <br><br>
+QT m³/h: __________________________ <br><br>
+QT proyectado: __________________________
+</div>
+
+<h2>INCISO B – Dimensionamiento de Tubería</h2>
+
+<p>
+Determine el diámetro preliminar de la tubería, la longitud equivalente considerando accesorios y el diámetro comercial recomendado.
+</p>
+
+<div class="respuesta">
+Diámetro preliminar: __________________________ <br><br>
+Longitud equivalente: __________________________ <br><br>
+Diámetro final: __________________________
+</div>
+
+<h2>INCISO C – Cálculo del Acumulador</h2>
+
+<p>
+Determine el volumen mínimo del acumulador requerido.
+</p>
+
+<div class="respuesta">
+Volumen del acumulador: __________________________
+</div>
+
+<div class="no-print">
+
+<hr>
+
+<p>Presione el botón para imprimir el examen</p>
+
+<button onclick="window.print()">Imprimir examen</button>
+
+</div>
+
+</body>
+</html>

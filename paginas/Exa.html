@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evaluación Práctica - Raspberry Pi Pico 2 W</title>
+<style>
+  @page {
+    size: letter;
+    margin: 1.5cm;
+  }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    border-bottom: 3px solid #0284c7;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 18pt;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .header h2 {
+    font-size: 13pt;
+    color: #0284c7;
+    margin: 0 0 16px 0;
+    font-weight: 600;
+  }
+  .student-data {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-weight: bold;
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+  }
+  .student-data div {
+    flex: 1;
+  }
+  .line-fill {
+    border-bottom: 1px dashed #64748b;
+    display: inline-block;
+    width: 65%;
+  }
+  .section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #ffffff;
+    background: #0f172a;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title.thanos { background: #6b21a8; }
+  .section-title.green { background: #15803d; }
+  .box {
+    background: #f8fafc;
+    border-left: 4px solid #0284c7;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  .box-alert {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  .box-hint {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  ul, ol {
+    margin: 6px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10pt;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  th {
+    background: #f1f5f9;
+    color: #334155;
+  }
+  code {
+    background: #e2e8f0;
+    color: #0f172a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 10pt;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>EVALUACIÓN PRÁCTICA</h1>
+    <h2>Programación con Raspberry Pi Pico 2 W y MicroPython</h2>
+    <div class="student-data">
+      <div>Nombre: <span class="line-fill"></span></div>
+      <div style="flex: 0.5;">Grupo: <span class="line-fill" style="width: 50%;"></span></div>
+      <div style="flex: 0.6;">Fecha: <span class="line-fill" style="width: 60%;"></span></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <strong>🚀 MISIÓN</strong><br>
+    Hoy tendrás dos retos de programación. En ambos utilizarás la Raspberry Pi Pico 2 W, LEDs, botones y los conocimientos de programación que hemos trabajado durante el curso.<br>
+    <em>Aquí no gana quien escriba más código. Gana quien pueda convertir un problema en un programa que funcione, probarlo y explicar cómo lo hizo.</em>
+  </div>
+
+  <div class="box-alert">
+    <strong>⚠️ Regla principal:</strong> La solución deberá realizarse únicamente utilizando los conocimientos, instrucciones, operadores y estructuras de programación estudiados durante el curso. No se permite incorporar recursos que no hayan sido trabajados previamente en clase.<br>
+    Durante la revisión, deberás ser capaz de explicar tu programa y realizar modificaciones que solicite el profesor.
+  </div>
+
+  <div class="section-title thanos">🟣 RETO 1: LOS CHASQUIDOS DE THANOS</div>
+
+  <p><strong>💥 La historia:</strong> Thanos ha descubierto una forma muy extraña de medir el poder de un número. Toma un número entero de 1 a 3 cifras y multiplica sus dígitos. Si el resultado todavía tiene más de una cifra, vuelve a multiplicar sus dígitos. Cada multiplicación representa un chasquido. El proceso continúa hasta obtener un solo dígito (máximo 6 chasquidos para números de 1 a 3 cifras).</p>
+
+  <div class="box">
+    <strong>🧠 Ejemplo (Número: 679)</strong><br>
+    <code>679</code> → <code>378</code> → <code>168</code> → <code>48</code> → <code>32</code> → <code>6</code><br>
+    6 × 7 × 9 = 378 | 3 × 7 × 8 = 168 | 1 × 6 × 8 = 48 | 4 × 8 = 32 | 3 × 2 = 6<br>
+    <strong>Resultado:</strong> Número original: 679 | Número final: 6 | Cantidad de chasquidos: 5
+  </div>
+
+  <p><strong>🎯 Tu misión:</strong> Desarrolla un programa para la Raspberry Pi Pico 2 W que permita al usuario introducir un número entero de 1 a 3 cifras y determine cuántos chasquidos necesita para obtener un solo dígito.</p>
+  <ul>
+    <li>Solicitar al usuario el número mediante la consola.</li>
+    <li>Trabajar correctamente con números de 1, 2 y 3 cifras.</li>
+    <li>Obtener los dígitos del número utilizando las operaciones aritméticas estudiadas en clase (<code>//</code> y <code>%</code>).</li>
+    <li>Multiplicar los dígitos correspondientes y repetir hasta obtener un solo dígito.</li>
+    <li>Utilizar un ciclo <code>for</code> para realizar el proceso (máximo 6 chasquidos).</li>
+    <li>Mostrar en consola: el número original, el número final y la cantidad de chasquidos.</li>
+    <li>Utilizar 6 LEDs para representar visualmente la cantidad de chasquidos.</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Chasquidos</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LEDs encendidos</strong></td>
+        <td>● ○ ○ ○ ○ ○</td>
+        <td>● ● ○ ○ ○ ○</td>
+        <td>● ● ● ○ ○ ○</td>
+        <td>● ● ● ● ○ ○</td>
+        <td>● ● ● ● ● ○</td>
+        <td>● ● ● ● ● ●</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box-hint">
+    <strong>🧙 Pistas de Thanos:</strong>
+    <ul>
+      <li><strong>Pista 1:</strong> Usa <code>//</code> (división entera) y <code>%</code> (módulo/residuo) para aislar dígitos. Haz pruebas en papel primero.</li>
+      <li><strong>Pista 2:</strong> Revisa si el número tiene 1, 2 o 3 cifras antes de descomponerlo.</li>
+      <li><strong>Pista 3:</strong> El número va cambiando en cada iteración. Usa una variable acumuladora.</li>
+      <li><strong>Pista 4:</strong> Incrementa un contador en 1 por cada multiplicación completada.</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="section-title green">💚 RETO 2: EL ENTRENAMIENTO DE LINTERNA VERDE</div>
+
+  <p><strong>🟢 ¡El anillo te ha elegido!</strong> Has sido seleccionado para entrenar como integrante de los Green Lantern Corps. Tu herramienta de entrenamiento será la Raspberry Pi Pico 2 W. El anillo generará una cantidad de energía entre 1 y 6. Los LEDs representarán visualmente la cantidad de energía generada (ejemplo: Energía 4 = <code>● ● ● ● ○ ○</code>).</p>
+
+  <p><strong>⚡ El Desafío:</strong> Determinar si la energía del anillo es <strong>PAR</strong> o <strong>IMPAR</strong> mediante dos botones:</p>
+  <ul>
+    <li><strong>BOTÓN 1:</strong> PAR</li>
+    <li><strong>BOTÓN 2:</strong> IMPAR</li>
+  </ul>
+
+  <div class="box-alert">
+    <strong>⏱️ ¡SOLO TIENES 3 SEGUNDOS!</strong><br>
+    El LED 10 comenzará a parpadear. Mientras el LED 10 esté parpadeando, deberás presionar uno de los botones. El programa deberá evaluar la respuesta al finalizar el tiempo.
+    <ul>
+      <li>🟢 <strong>Si aciertas:</strong> Muestra en consola <code>¡CORRECTO!</code> y enciende todos los LEDs.</li>
+      <li>🔴 <strong>Si fallas:</strong> Muestra en consola <code>¡INCORRECTO!</code> y apaga todos los LEDs.</li>
+    </ul>
+  </div>
+
+  <p><strong>🎯 Tu misión:</strong></p>
+  <ul>
+    <li>Solicitar al usuario una cantidad de energía entre 1 y 6 y encender los LEDs correspondientes.</li>
+    <li>Usar un ciclo <code>for</code> con <code>range()</code> y <code>sleep()</code> para controlar exactamente los 3 segundos.</li>
+    <li>Hacer parpadear el LED 10 durante esos 3 segundos y monitorear los botones.</li>
+    <li>Guardar la respuesta del usuario en una variable mientras parpadea el LED.</li>
+    <li>Al terminar el tiempo, verificar si la energía era Par o Impar y comparar con la respuesta dada.</li>
+  </ul>
+
+  <div class="box">
+    <strong>🔌 Importante (Configuración de Botones):</strong> Los botones utilizan resistencias físicas <em>pull-down</em>.<br>
+    Sin presionar = <code>0</code> | Presionado = <code>1</code>
+  </div>
+
+  <div class="box-hint">
+    <strong>🧙 Pistas del Entrenamiento:</strong>
+    <ul>
+      <li><strong>Pista 1:</strong> Usa el operador residuo <code>% 2</code> para saber si es par (residuo 0) o impar (residuo 1).</li>
+      <li><strong>Pista 2:</strong> Estructura el encendido inicial con bloques condicionales (<code>if</code>/<code>elif</code>).</li>
+      <li><strong>Pista 3:</strong> Calcula cuántos ciclos cortos de parpadeo (<code>sleep</code>) equivalen a 3 segundos completos.</li>
+      <li><strong>Pista 4:</strong> Utiliza una variable tipo bandera o de estado para memorizar si el botón fue presionado durante la ventana de tiempo, aunque luego se suelte.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <strong>🧪 Prueba final antes de entregar:</strong>
+    <ul>
+      <li><em>Thanos:</em> Prueba números de 1, 2 y 3 cifras con distintas cantidades de chasquidos.</li>
+      <li><em>Linterna Verde:</em> Prueba valores del 1 al 6, evaluando respuestas correctas e incorrectas.</li>
+    </ul>
+  </div>
+
+  <div class="box-alert">
+    <strong>🏆 REVISIÓN DEL PROGRAMA</strong><br>
+    Durante la revisión, el profesor podrá solicitarte explicar la lógica de tu código, justificar el uso de ciertas operaciones y realizar modificaciones en vivo.<br>
+    <em>¡Que los LEDs estén contigo y la voluntad del anillo sea más fuerte que cualquier bug! 💚</em>
+  </div>
+
+</body>
+</html>
